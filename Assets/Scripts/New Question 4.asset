@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: Where was the french surrender to germany signed?
   answers:
-  - 
-  - 
-  - 
-  - 
-  correctAnswerIndex: 0
+  - In paris.
+  - In berlin.
+  - In a railway car.
+  - On a boat.
+  correctAnswerIndex: 2

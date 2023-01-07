@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: New Question 2
   m_EditorClassIdentifier: 
   question: Which best describes germanies standard invasion strategy at the begining
-    of the WWII?[
+    of the WWII?
   answers:
-  - 
-  - 
-  - 
-  - 
+  - Attack with a combination of speed and overwhelming force.
+  - Intimidate the enemy by first amassing a large force along the enemies border.
+  - Being with acts of sabotage behind enemy lines.
+  - Drawout battles for as long as possible to wear enemy out.
   correctAnswerIndex: 0

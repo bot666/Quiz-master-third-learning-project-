@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: Which two countries where the first to declear war on germany ?
   answers:
-  - 
-  - 123
-  - 
-  - 
-  correctAnswerIndex: 0
+  - Itally and Greece
+  - Britain and France
+  - Norway and Denmark
+  - The U.S and USSR
+  correctAnswerIndex: 1
