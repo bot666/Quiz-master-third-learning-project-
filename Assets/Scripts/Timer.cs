@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         UpdateTimer();
-        
+        Debug.Log(isAnsweringQuestion);
     }
     public void CancelTimer()
     {
