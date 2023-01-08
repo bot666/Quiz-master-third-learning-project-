@@ -7,13 +7,13 @@ public class EndScreen : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI finalScoreText;
     ScoreKeeper scoreKeeper;
-    void Start()
+    void Awake()
     {
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
     }
     public void ShowFinalScore()
     {
-        finalScoreText.text = "Congratulations!\nYou got a score of" + scoreKeeper.CalculateScore() + "%";
+        finalScoreText.text = "Congratulations!\nYou got a score of " + scoreKeeper.CalculateScore() + "%";
     }
 
 

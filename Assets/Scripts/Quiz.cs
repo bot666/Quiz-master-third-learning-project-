@@ -29,12 +29,14 @@ public class Quiz : MonoBehaviour
     [SerializeField] Slider progressBar;
     public bool isComplete;
     
-    void Start()
+    void Awake()
     {
         timer = FindObjectOfType<Timer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         progressBar = FindObjectOfType<Slider>();
-        Debug.Log(isComplete);
+        progressBar.maxValue = questions.Count ;
+        progressBar.value = 0;
+        //Debug.Log(isComplete);
     }
 
      void LateUpdate()
@@ -47,6 +49,11 @@ public class Quiz : MonoBehaviour
         timerImage.fillAmount = timer.fillFraction;
         if(timer.loadNextQuestion)
         {
+            if(progressBar.value == progressBar.maxValue)
+            {
+            isComplete = true;
+            return;
+            }
             hasAnsweredEarly = false;
             GetNextQuestion();
             timer.loadNextQuestion = false;
@@ -58,7 +65,7 @@ public class Quiz : MonoBehaviour
             
             
             SetButtonState(false);
-            DisplayAnswer(currentQuestion.GetCorrectAnswerIndex());
+            DisplayAnswer(6);
         }
    }
     public void OnAnswerSelected (int index)
@@ -68,10 +75,7 @@ public class Quiz : MonoBehaviour
         SetButtonState(false); 
         timer.CancelTimer();
         scoreText.text = "Score:" + scoreKeeper.CalculateScore() + "%";
-        if(progressBar.value == progressBar.maxValue)
-        {
-            isComplete = true;
-        }
+        
     }
     void DisplayAnswer(int index)
     {
@@ -82,7 +86,7 @@ public class Quiz : MonoBehaviour
             Image buttonImage = answerButtons[index].GetComponent<Image>();
             buttonImage.sprite = correctAnswerSprite;
             scoreKeeper.IncrementCorrectAnswers();
-
+            
 
         }
         else
@@ -96,11 +100,7 @@ public class Quiz : MonoBehaviour
 
         }
     }
-    public void ProgressBar()
-    {
-        progressBar.maxValue = questions.Count ;
-        progressBar.value = 0;
-    }
+
     public void GetNextQuestion()
     {
         if (questions.Count > 0)
