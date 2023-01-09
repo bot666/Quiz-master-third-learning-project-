@@ -9,24 +9,29 @@ public class GameManager : MonoBehaviour
     EndScreen endScreen;
 
     // Start is called before the first frame update
-    void Start()
+    
+    void Awake()
     {
         quiz = FindObjectOfType<Quiz>();
         endScreen = FindObjectOfType<EndScreen>();
+    }
+    void Start()
+    {
+
         quiz.gameObject.SetActive(true);
         endScreen.gameObject.SetActive(false);
-        Debug.Log(quiz.gameObject);
+        //Debug.Log(quiz.isComplete);
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if (quiz.isComplete)
+        if (quiz.isComplete == true)
         {
-           // quiz.gameObject.SetActive(false);
-           // endScreen.gameObject.SetActive(true);
-            
+            quiz.gameObject.SetActive(false);
+            endScreen.gameObject.SetActive(true);
+            endScreen.ShowFinalScore();
         }
     }
     public void OnRePlayLevel1()

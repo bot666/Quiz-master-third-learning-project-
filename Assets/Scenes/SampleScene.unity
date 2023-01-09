@@ -2539,7 +2539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b057ac9f695d969478f26faf7b0083fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToCompleteQuestions: 1
+  timeToCompleteQuestions: 5
   timeToShowCorrectAnswer: 2
   loadNextQuestion: 0
   fillFraction: 10
